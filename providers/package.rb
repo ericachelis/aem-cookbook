@@ -22,7 +22,6 @@
 # checking on the output of the curl commands.
 require 'time'
 require 'json'
-require 'rest_client'
 
 # Queries AEM. Returns an array of all packages matching the package_name
 # Each element within the array is a Hash representing an individual package.
@@ -74,6 +73,7 @@ end
 
 def aem_req(overrides={})
   require 'uri'
+  require 'rest_client'
   options = {
     :method => :post,
     :user => new_resource.user,
